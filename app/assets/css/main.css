@@ -1,0 +1,82 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  color: #aaa;
+  font-family: "Lato", "Helvetica Neue" sans-serif;
+  font-size: 35px;
+  font-weight: 100;
+  outline: none;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background: #4F525A;
+  padding: 50px;
+}
+
+#calculator {
+  background: #fafafa;
+  margin: auto;
+  display: table;
+  overflow: hidden;
+}
+#calculator:before {
+  content: " ";
+  display: block;
+}
+#calculator .row {
+  clear: both;
+}
+#calculator .col {
+  float: left;
+  display: table;
+  overflow: hidden;
+}
+#calculator .col:before {
+  content: " ";
+  display: block;
+}
+#calculator button {
+  float: left;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  background: #fafafa;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+#calculator #display {
+  background: #fff;
+  text-align: right;
+  padding: 10px 20px;
+  font-size: 2em;
+}
+#calculator #keys {
+  display: table;
+  overflow: hidden;
+  float: right;
+}
+#calculator #keys:before {
+  content: " ";
+  display: block;
+}
+#calculator #keys #regular-keys button:nth-child(3n+1) {
+  clear: both;
+}
+#calculator #keys #regular-keys button:active {
+  background: #eee;
+}
+#calculator #keys #operators-keys button {
+  clear: both;
+  background: #F7747A;
+  color: #fff;
+}
+#calculator #keys #operators-keys button:active {
+  background: #e36066;
+}
+
+/*# sourceMappingURL=main.css.map */
