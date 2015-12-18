@@ -14,46 +14,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400)
 
-$spacing: 90px
 
-$color: #F7747A
-$color-dark: $color - 40
-
-$radius: 4px
-
-$font-size-default: 35px
-$font-size-big: 3em
-$font-size-medium: 1.5em
-$font-size-small: .8em
-
-$transition-duration: .1s
-
-
-=prefix($property, $value)
-  -webkit-#{$property}: #{$value}
-  -ms-#{$property}: #{$value}
-  -moz-#{$property}: #{$value}
-  -o-#{$property}: #{$value}
-  #{$property}: #{$value}
-
-=before
-  content: " "
-  display: block
-
-=clearfix
-  display: table
-  overflow: hidden
-  &:before
-    +before
-
-=absolute-center
-  position: absolute
-  left: 50%
-  top: 50%
-  +prefix(transform, translate(-50%, -50%))
-
-=transition($sec: $transition-duration)
-  +prefix(transition, #{$sec})
+@import "config.sass"
+@import "mixins.sass"
 
 *
   padding: 0
@@ -61,56 +24,61 @@ $transition-duration: .1s
   border: 0
   color: #aaa
   font-family: 'Lato', "Helvetica Neue" sans-serif
-  font-size: $font-size-default
+  font-size: $font-size-big
   font-weight: 100
   outline: none
   +prefix("box-sizing", border-box)
 
 html
-  background: #4F525A
-  padding: 50px
+  font-size: 16px
+  background: $color-bg
+  padding: $spacing
+
+body
+  font-size: $font-size-default
+
+.row
+  clear: both
+
+.col
+  float: left
+  +clearfix
 
 #calculator
   background: #fafafa
   margin: auto
   +clearfix
-
-  .row
-    clear: both
-
-  .col
-    float: left
-    +clearfix
-
   button
     float: left
-    width: $spacing
-    height: $spacing
-    line-height: $spacing
-    background: #fafafa
+    width: $spacing*2
+    height: $spacing*2
+    line-height: $spacing*2
+    background: $color-keys
     +transition
+    &:active
+      font-size: $font-size-big - $font-size-big/8
 
-  #display
-    background: #fff
-    text-align: right
-    padding: 10px 20px
-    font-size: 2em
+#display
+  background: #fff
+  text-align: right
+  padding: $spacing/2 $spacing/1.5
+  font-size: $font-size-big*1.8
 
-  #keys
-    +clearfix
-    float: right
+#keys
+  +clearfix
+  float: right
 
-    #regular-keys
-      button
-        &:nth-child(3n+1)
-          clear: both
-        &:active
-          background: #eee
+#regular-keys
+  button
+    &:nth-child(3n+1)
+      clear: both
+    &:active
+      background: $color-keys-active
 
-    #operators-keys
-      button
-        clear: both
-        background: $color
-        color: #fff
-        &:active
-          background: $color - 20
+#operators-keys
+  button
+    clear: both
+    background: $color
+    color: #fff
+    &:active
+      background: $color-dark

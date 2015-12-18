@@ -1,0 +1,25 @@
+=prefix($property, $value)
+  -webkit-#{$property}: #{$value}
+  -ms-#{$property}: #{$value}
+  -moz-#{$property}: #{$value}
+  -o-#{$property}: #{$value}
+  #{$property}: #{$value}
+
+=before
+  content: " "
+  display: block
+
+=clearfix
+  display: table
+  overflow: hidden
+  &:before
+    +before
+
+=absolute-center
+  position: absolute
+  left: 50%
+  top: 50%
+  +prefix(transform, translate(-50%, -50%))
+
+=transition($sec: $transition-duration)
+  +prefix(transition, #{$sec})

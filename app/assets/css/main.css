@@ -5,7 +5,7 @@
   border: 0;
   color: #aaa;
   font-family: "Lato", "Helvetica Neue" sans-serif;
-  font-size: 35px;
+  font-size: 2.5rem;
   font-weight: 100;
   outline: none;
   -ms-box-sizing: border-box;
@@ -14,8 +14,27 @@
 }
 
 html {
+  font-size: 16px;
   background: #4F525A;
-  padding: 50px;
+  padding: 3.5rem;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.row {
+  clear: both;
+}
+
+.col {
+  float: left;
+  display: table;
+  overflow: hidden;
+}
+.col:before {
+  content: " ";
+  display: block;
 }
 
 #calculator {
@@ -28,54 +47,49 @@ html {
   content: " ";
   display: block;
 }
-#calculator .row {
-  clear: both;
-}
-#calculator .col {
-  float: left;
-  display: table;
-  overflow: hidden;
-}
-#calculator .col:before {
-  content: " ";
-  display: block;
-}
 #calculator button {
   float: left;
-  width: 90px;
-  height: 90px;
-  line-height: 90px;
+  width: 7rem;
+  height: 7rem;
+  line-height: 7rem;
   background: #fafafa;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
-#calculator #display {
+#calculator button:active {
+  font-size: 2.1875rem;
+}
+
+#display {
   background: #fff;
   text-align: right;
-  padding: 10px 20px;
-  font-size: 2em;
+  padding: 1.75rem 2.33333rem;
+  font-size: 4.5rem;
 }
-#calculator #keys {
+
+#keys {
   display: table;
   overflow: hidden;
   float: right;
 }
-#calculator #keys:before {
+#keys:before {
   content: " ";
   display: block;
 }
-#calculator #keys #regular-keys button:nth-child(3n+1) {
+
+#regular-keys button:nth-child(3n+1) {
   clear: both;
 }
-#calculator #keys #regular-keys button:active {
+#regular-keys button:active {
   background: #eee;
 }
-#calculator #keys #operators-keys button {
+
+#operators-keys button {
   clear: both;
   background: #F7747A;
   color: #fff;
 }
-#calculator #keys #operators-keys button:active {
+#operators-keys button:active {
   background: #e36066;
 }
 
